@@ -2,5 +2,10 @@
 require_once 'ipq.php';
 
 IPQ::load("ipadr.dat");
-echo IPQ::find("200.2.3.4");
+
+if(is_array($_GET)&&count($_GET)>0){
+    if(isset($_GET["ip"])){
+        echo IPQ::find($_GET["ip"]);        
+    }
+}
 ?>
